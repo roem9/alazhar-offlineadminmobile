@@ -606,6 +606,7 @@
                 dataType : "JSON",
                 data : {tgl_daftar: tgl_daftar,nik: nik,nama_indo: nama_indo,nama_arab: nama_arab,t4_lahir_indo: t4_lahir_indo,t4_lahir_arab: t4_lahir_arab,tgl_lahir: tgl_lahir,jk:jk,desa_kel_indo: desa_kel_indo,desa_kel_arab: desa_kel_arab,kec_indo: kec_indo,kec_arab: kec_arab,kota_kab_indo: kota_kab_indo,kota_kab_arab: kota_kab_arab,no_wa: no_wa,pembayaran: pembayaran,detail_pembayaran: detail_pembayaran,email: email, program:program, periode:periode},
                 success : function(data){
+                    reload_data();
                     $("#formAdd").trigger("reset");
                     var msg = `
                             <div class="alert alert-success alert-dismissible fade show" role="alert"><i class="fa fa-check-circle text-success mr-1"></i> Berhasil menambahkan peserta baru atas nama `+data.nama_indo+`<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>`;
@@ -658,7 +659,7 @@
                         else catatan = ``
 
                         if(user.buku == 0) {
-                            btnBuku = `<a href="javascript:void(0)" id="buku" class="btn btn-sm btn-outline-primary" data-id="`+user.id+`|`+data.nama_indo+`|`+user.kelas.program+`|`+user.id_peserta+`"><i class="fa fa-book"></i></a>`;
+                            btnBuku = `<a href="javascript:void(0)" id="buku" class="btn btn-sm btn-danger" data-id="`+user.id+`|`+data.nama_indo+`|`+user.kelas.program+`|`+user.id_peserta+`"><i class="fa fa-book"></i></a>`;
                             formCatatan = `<textarea name="catatan_buku" id="catatan_buku`+user.id+`" class="form-control form-control-sm mt-2">`+user.catatan+`</textarea>
                             <span id="msg-`+user.id+`">`+catatan+`</span>
                             <div class="d-flex justify-content-end mt-1">

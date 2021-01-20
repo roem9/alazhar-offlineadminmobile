@@ -79,11 +79,15 @@ class Peserta_model extends CI_Model {
     public function get_peserta_by_name(){
         $nama = $this->input->post("nama");
         if($nama == ""){
+            // get_all_like($table, $col, $like, $where, $orderby = "", $urut)
             $peserta = $this->Admin_model->get_all_like("peserta", "nama_indo", $nama, ["konfirm" => 1], "nama_indo", "ASC");
         } else {
+            // get_all_like($table, $col, $like, $where, $orderby = "", $urut)
             $peserta = $this->Admin_model->get_all_like("peserta", "nama_indo", $nama, ["konfirm" => 1], "tgl_daftar", "DESC");
         }
-        // get_all_like($table, $col, $like, $where, $orderby = "", $urut)
+        
+        $data = [];
+
         foreach ($peserta as $i => $peserta) {
             $data[$i] = $peserta;
 
@@ -105,6 +109,7 @@ class Peserta_model extends CI_Model {
             if($peserta['tas'] == 1) $data[$i]['tas'] = '<a href="javascript:void(0)" data-id="'.$peserta["id_peserta"].'|'.$peserta["nama_indo"].'|0|tas" class="btn btn-sm btn-success mr-1 list"><i class="fa fa-shopping-bag"></i></a>';
             else $data[$i]['tas'] = '<a href="javascript:void(0)"  data-id="'.$peserta["id_peserta"].'|'.$peserta["nama_indo"].'|1|tas" class="btn btn-sm btn-danger mr-1 list"><i class="fa fa-shopping-bag"></i></a>';
         }
+
         return $data;
     }
 

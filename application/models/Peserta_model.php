@@ -97,13 +97,13 @@ class Peserta_model extends CI_Model {
 
             $data[$i]['tgl_daftar'] = date('d-M-Y', strtotime($peserta['tgl_daftar']));
             if($peserta['kaos'] == 1) $data[$i]['kaos'] = '<a href="javascript:void(0)" data-id="'.$peserta["id_peserta"].'|'.$peserta["nama_indo"].'|0|kaos" class="btn btn-sm btn-success mr-1 list"><i class="fa fa-tshirt"></i></a>';
-            else $data[$i]['kaos'] = '<a href="javascript:void(0)"  data-id="'.$peserta["id_peserta"].'|'.$peserta["nama_indo"].'|1|kaos" class="btn btn-sm btn-outline-success mr-1 list"><i class="fa fa-tshirt"></i></a>';
+            else $data[$i]['kaos'] = '<a href="javascript:void(0)"  data-id="'.$peserta["id_peserta"].'|'.$peserta["nama_indo"].'|1|kaos" class="btn btn-sm btn-danger mr-1 list"><i class="fa fa-tshirt"></i></a>';
             
             if($peserta['pin'] == 1) $data[$i]['pin'] = '<a href="javascript:void(0)" data-id="'.$peserta["id_peserta"].'|'.$peserta["nama_indo"].'|0|pin" class="btn btn-sm btn-success mr-1 list"><i class="fa fa-universal-access"></i></a>';
-            else $data[$i]['pin'] = '<a href="javascript:void(0)"  data-id="'.$peserta["id_peserta"].'|'.$peserta["nama_indo"].'|1|pin" class="btn btn-sm btn-outline-success mr-1 list"><i class="fa fa-universal-access"></i></a>';
+            else $data[$i]['pin'] = '<a href="javascript:void(0)"  data-id="'.$peserta["id_peserta"].'|'.$peserta["nama_indo"].'|1|pin" class="btn btn-sm btn-danger mr-1 list"><i class="fa fa-universal-access"></i></a>';
             
             if($peserta['tas'] == 1) $data[$i]['tas'] = '<a href="javascript:void(0)" data-id="'.$peserta["id_peserta"].'|'.$peserta["nama_indo"].'|0|tas" class="btn btn-sm btn-success mr-1 list"><i class="fa fa-shopping-bag"></i></a>';
-            else $data[$i]['tas'] = '<a href="javascript:void(0)"  data-id="'.$peserta["id_peserta"].'|'.$peserta["nama_indo"].'|1|tas" class="btn btn-sm btn-outline-success mr-1 list"><i class="fa fa-shopping-bag"></i></a>';
+            else $data[$i]['tas'] = '<a href="javascript:void(0)"  data-id="'.$peserta["id_peserta"].'|'.$peserta["nama_indo"].'|1|tas" class="btn btn-sm btn-danger mr-1 list"><i class="fa fa-shopping-bag"></i></a>';
         }
         return $data;
     }
